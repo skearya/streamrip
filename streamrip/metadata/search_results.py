@@ -56,6 +56,10 @@ class ArtistSummary(Summary):
                 item.get("publisher_metadata")
                 and item["publisher_metadata"].get("artist")
             )
+            or (
+                item.get("user")
+                and item["user"].get("username")
+            )
             or "Unknown"
         )
         num_albums = item.get("albums_count") or "Unknown"
